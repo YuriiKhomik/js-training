@@ -1,0 +1,81 @@
+// fonts
+
+@import "./base/fonts";
+
+// normalise
+
+@import "./base/normalise";
+
+// zero
+
+@import "./base/reset";
+
+// vars
+
+@import "./base/utils/variables";
+
+// placeholders
+
+@import "./base/utils/placeholders";
+
+// common
+
+@import "./base/common";
+
+/* стилізація лого */
+
+@import "./components/logo";
+
+
+/* стилізація мобільного хедера */
+
+@import "./components/mobile-header";
+
+// стилізація основного хедера
+
+@import "./components/main-header";
+
+/* герой */
+
+@import "./components/hero";
+
+/* Переваги */
+
+@import "./components/benefits";
+
+/*Чим ми займаємось*/
+
+@import "./components/whatwedo";
+
+/* Команда */
+
+@import "./components/team";
+
+/* Клієнти */
+
+@import "./components/clients";
+
+/* Стилізація фільтра на сторінці Портфоліо */
+
+@import "./components/filter";
+
+/* Стилізація галереї на сторінці Портфоліо */
+
+@import "./components/portfolio";
+
+/* Стилізація Картки портфоліо */
+
+@import "./components/card";
+
+/* футер */
+
+@import "./components/footer";
+
+/* Форма підписки */
+
+@import "./components/subscribe-form";
+
+/* Модальне вікно+бекдроп */
+
+@import "./components/modal-backdrop";
+

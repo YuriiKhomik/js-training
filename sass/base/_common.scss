@@ -1,0 +1,64 @@
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    // outline: 2px solid tomato;
+    width: 100%;
+    min-width: 320px;
+    max-width: 480px;
+
+    // @media screen and (min-width: $mobile) {
+    //     max-width: 480px;
+    // }
+
+    @media screen and (min-width: $tablet) {
+        max-width: 768px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        max-width: 1200px;
+    }
+}
+
+.section {
+    @media screen and (max-width:1199px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @media screen and (min-width:1200px) {
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
+}
+
+/* приховані заголовки */
+
+.hidden-title {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.section-title {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    color: var(--tittle-text-color);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-align: center;
+
+    @media screen and (min-width:1200px) {
+        margin-bottom: 50px;
+        font-size: 36px;
+    }
+}
