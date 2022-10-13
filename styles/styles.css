@@ -32,7 +32,7 @@ body {
     text-decoration: underline;
 }
 
-.site-nav__item--current{
+.site-nav__link--current{
     color: tomato;
 }
 
