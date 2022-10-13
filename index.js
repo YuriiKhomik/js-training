@@ -204,6 +204,35 @@
 // CREATE FUNCTION FOR CREATING CARD OF PRODUCT
 
 
+const product = {
+    name: 'Steering wheels',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, impedit aliquid! Doloribus fugiat libero, voluptatem culpa minima eius esse sapiente.',
+    price: 2000,
+    available: true,
+    onSale: true,
+};
+
+const productEl = document.createElement('article');
+productEl.classList.add('product');
+
+const nameEl = document.createElement('h2');
+nameEl.classList.add('product__name')
+nameEl.textContent = product.name;
+
+const descrEl = document.createElement('p');
+descrEl.textContent = product.description;
+descrEl.classList.add('product_descr');
+
+const priceEl = document.createElement('p');
+priceEl.textContent = `Price: ${product.price}`;
+priceEl.classList.add('product__price');
+
+productEl.append(nameEl, descrEl, priceEl);
+
+console.log(productEl);
+
+
+
 
 // _____________________________________________________________________
 
