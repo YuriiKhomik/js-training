@@ -1,3 +1,9 @@
+// importing products from data/products.js (it works only when type "module" added to scrypt in html)
+
+import products from './data/products.js';
+
+// console.log(products)
+
 // // adding/deleting class to HTML element
 
 // const navEl = document.querySelector('.site-nav');
@@ -204,38 +210,74 @@
 // CREATING CARD OF PRODUCT
 
 
-const product = {
-    name: 'Steering wheels',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, impedit aliquid! Doloribus fugiat libero, voluptatem culpa minima eius esse sapiente.',
-    price: 2000,
-    available: true,
-    onSale: true,
-};
+// const product = {
+//     name: 'Steering wheels',
+//     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, impedit aliquid! Doloribus fugiat libero, voluptatem culpa minima eius esse sapiente.',
+//     price: 2000,
+//     available: true,
+//     onSale: true,
+// };
 
-const productEl = document.createElement('article');
-productEl.classList.add('product');
+// const productEl = document.createElement('article');
+// productEl.classList.add('product');
 
-const nameEl = document.createElement('h2');
-nameEl.classList.add('product__name')
-nameEl.textContent = product.name;
+// const nameEl = document.createElement('h2');
+// nameEl.classList.add('product__name')
+// nameEl.textContent = product.name;
 
-const descrEl = document.createElement('p');
-descrEl.textContent = product.description;
-descrEl.classList.add('product_descr');
+// const descrEl = document.createElement('p');
+// descrEl.textContent = product.description;
+// descrEl.classList.add('product_descr');
 
-const priceEl = document.createElement('p');
-priceEl.textContent = `Price: ${product.price}`;
-priceEl.classList.add('product__price');
+// const priceEl = document.createElement('p');
+// priceEl.textContent = `Price: ${product.price}`;
+// priceEl.classList.add('product__price');
 
-productEl.append(nameEl, descrEl, priceEl);
+// productEl.append(nameEl, descrEl, priceEl);
 
-console.log(productEl);
+// console.log(productEl);
 
 
 // _____________________________________________________________________
 
 
-// CREATING CARD OF PRODUCT WITH ARRAY OF OBJECTS
+// CREATING CARD OF PRODUCT USING ARRAY OF OBJECTS (using import on the top∆∆∆)
+// (using destructurization)
+
+// creating 1 element (1 card with product)
+const makeProductCard = ({ name, description, price }) => {
+
+    const productEl = document.createElement('article');
+    productEl.classList.add('product');
+
+    const nameEl = document.createElement('h2');
+    nameEl.classList.add('product__name')
+    nameEl.textContent = name;
+
+    const descrEl = document.createElement('p');
+    descrEl.textContent = description;
+    descrEl.classList.add('product_descr');
+
+    const priceEl = document.createElement('p');
+    priceEl.textContent = `Price: ${price}`;
+    priceEl.classList.add('product__price');
+    
+    productEl.append(nameEl, descrEl, priceEl);
+
+    return productEl;
+};
+
+// console.log(makeProductCard(products[2]));
+
+// creating array of elements (multiple cards with products) function 'makeProductCard' is used as callback
+const elements = products.map(makeProductCard);
+console.log(elements);
+
+// and adding this cards to parent HTML
+const productContainerEl = document.querySelector('.js-products');
+productContainerEl.append(...elements);
+
+
 
 
 
