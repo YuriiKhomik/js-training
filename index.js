@@ -244,38 +244,71 @@ import products from './data/products.js';
 // CREATING CARD OF PRODUCT USING ARRAY OF OBJECTS (using import on the top∆∆∆)
 // (using destructurization)
 
-// creating 1 element (1 card with product)
-const makeProductCard = ({ name, description, price }) => {
+// // creating 1 element (1 card with product)
+// const makeProductCard = ({ name, description, price }) => {
 
-    const productEl = document.createElement('article');
-    productEl.classList.add('product');
+//     const productEl = document.createElement('article');
+//     productEl.classList.add('product');
 
-    const nameEl = document.createElement('h2');
-    nameEl.classList.add('product__name')
-    nameEl.textContent = name;
+//     const nameEl = document.createElement('h2');
+//     nameEl.classList.add('product__name')
+//     nameEl.textContent = name;
 
-    const descrEl = document.createElement('p');
-    descrEl.textContent = description;
-    descrEl.classList.add('product_descr');
+//     const descrEl = document.createElement('p');
+//     descrEl.textContent = description;
+//     descrEl.classList.add('product_descr');
 
-    const priceEl = document.createElement('p');
-    priceEl.textContent = `Price: ${price}`;
-    priceEl.classList.add('product__price');
+//     const priceEl = document.createElement('p');
+//     priceEl.textContent = `Price: ${price}`;
+//     priceEl.classList.add('product__price');
     
-    productEl.append(nameEl, descrEl, priceEl);
+//     productEl.append(nameEl, descrEl, priceEl);
 
-    return productEl;
-};
+//     return productEl;
+// };
 
-// console.log(makeProductCard(products[2]));
+// // console.log(makeProductCard(products[2]));
 
-// creating array of elements (multiple cards with products) function 'makeProductCard' is used as callback
-const elements = products.map(makeProductCard);
-console.log(elements);
+// // creating array of elements (multiple cards with products) function 'makeProductCard' is used as callback
+// const elements = products.map(makeProductCard);
+// console.log(elements);
 
-// and adding this cards to parent HTML
-const productContainerEl = document.querySelector('.js-products');
-productContainerEl.append(...elements);
+// // and adding this cards to parent HTML
+// const productContainerEl = document.querySelector('.js-products');
+// productContainerEl.append(...elements);
+
+
+// _____________________________________________________________________
+
+// STRING PARSE
+
+const titleEl = document.querySelector('.title');
+
+// textContent returns all textcontent
+console.log(titleEl.textContent);
+
+// inner html returns html markup from opening tag to closing tag
+ 
+console.log(titleEl.innerHTML);
+
+// USE IT ONLY IF YOU NEED CLEAN ALL CONTENT OR CHANGE ALL CONTENT (parser see all markup and creates markup in accordance with what is written in quotation marks)
+
+// titleEl.innerHTML = '<a href="">This is anchor</a>'
+
+// HOW TO ADD SOMETHING TO EXISTING HTML:
+
+// neighbour before
+// titleEl.insertAdjacentHTML('beforebegin', '<a href="">This is anchor</a>')
+
+// neighbour after
+// titleEl.insertAdjacentHTML('afterend', '<a href="">This is anchor</a>')
+
+// before
+// titleEl.insertAdjacentHTML('afterbegin', '<a href="">This is anchor</a>')
+
+// after
+// titleEl.insertAdjacentHTML('beforeend', '<a href="">This is anchor</a>')
+
 
 
 
