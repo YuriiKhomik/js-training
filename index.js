@@ -1,6 +1,7 @@
 // importing products from data/products.js (it works only when type "module" added to scrypt in html)
 
 import products from './data/products.js';
+import transactionHistory from './data/transactions.js'
 
 // console.log(products)
 
@@ -282,14 +283,14 @@ import products from './data/products.js';
 
 // STRING PARSE
 
-const titleEl = document.querySelector('.title');
+// const titleEl = document.querySelector('.title');
 
 // textContent returns all textcontent
-console.log(titleEl.textContent);
+// console.log(titleEl.textContent);
 
 // inner html returns html markup from opening tag to closing tag
  
-console.log(titleEl.innerHTML);
+// console.log(titleEl.innerHTML);
 
 // USE IT ONLY IF YOU NEED CLEAN ALL CONTENT OR CHANGE ALL CONTENT (parser see all markup and creates markup in accordance with what is written in quotation marks)
 
@@ -308,6 +309,43 @@ console.log(titleEl.innerHTML);
 
 // after
 // titleEl.insertAdjacentHTML('beforeend', '<a href="">This is anchor</a>')
+
+
+// _____________________________________________________________________
+
+// TEMPLATE STRINGS
+// (using import on the top∆∆∆)
+
+// console.log(transactionHistory);
+
+// const makeTransactionTableRowMarkup = ({id, amount, date, name, type, business, account}) => {
+
+//     return `
+//     <tr>
+//         <td>${id}</td>
+//         <td>${amount}</td>
+//         <td>${date}</td>
+//         <td>${name}</td>
+//         <td>${type}</td>
+//         <td>${business}</td>
+//         <td>${account}</td>
+//     </tr >`;
+// };
+
+// console.log(transactionHistory)
+// console.log(makeTransactionTableRowMarkup(transactionHistory[2]));
+
+// const tableEl = document.querySelector('.js-transaction-table');
+// const makeTransactionTableRows = transactionHistory
+//     .map(makeTransactionTableRowMarkup)
+//     .join('');
+
+//     tableEl.insertAdjacentHTML('beforeend', makeTransactionTableRows)
+
+
+// console.log(makeTransactionTableRows);
+
+
 
 
 
