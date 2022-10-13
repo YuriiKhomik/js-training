@@ -44,49 +44,49 @@
 // CREATE ELEMENT
 
 // create in memory
-const titleEl = document.createElement('h1');
-// add class
-titleEl.classList.add('page-title');
-// add content
-titleEl.textContent = 'This is page title!!'
-// console.log(titleEl);
+// const titleEl = document.createElement('h1');
+// // add class
+// titleEl.classList.add('page-title');
+// // add content
+// titleEl.textContent = 'This is page title!!'
+// // console.log(titleEl);
 
-// add to HTML via appendChild (add in the end of PARENTS element)
-// document.body.appendChild(titleEl);
-// console.log(document.body);
+// // add to HTML via appendChild (add in the end of PARENTS element)
+// // document.body.appendChild(titleEl);
+// // console.log(document.body);
 
 
 
 
 
 // create in memory
-const imageEl = document.createElement('img');
-imageEl.src = 'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-versailles-gardens.jpg';
-imageEl.alt = 'France';
-imageEl.width = 300;
+// const imageEl = document.createElement('img');
+// imageEl.src = 'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-versailles-gardens.jpg';
+// imageEl.alt = 'France';
+// imageEl.width = 300;
 
 
-// create in memory 2 elements (hero title + image)
-const heroEl = document.querySelector('.hero');
-// heroEl.appendChild(titleEl);
-// heroEl.appendChild(imageEl);
-// OR VIA ONE OPERATION (use when need to add 2 or more neighbours into parent element)
-heroEl.append(titleEl, imageEl);
+// // create in memory 2 elements (hero title + image)
+// const heroEl = document.querySelector('.hero');
+// // heroEl.appendChild(titleEl);
+// // heroEl.appendChild(imageEl);
+// // OR VIA ONE OPERATION (use when need to add 2 or more neighbours into parent element)
+// heroEl.append(titleEl, imageEl);
 
 
 
 // create in memory 2 elements
-const navItemEl = document.createElement('li');
-navItemEl.classList.add('site-nav__item');
+// const navItemEl = document.createElement('li');
+// navItemEl.classList.add('site-nav__item');
 
-const navLinkEl = document.createElement('a');
-navLinkEl.classList.add('site-nav__link');
-navLinkEl.textContent = 'User profile';
-navLinkEl.href = "/profile";
+// const navLinkEl = document.createElement('a');
+// navLinkEl.classList.add('site-nav__link');
+// navLinkEl.textContent = 'User profile';
+// navLinkEl.href = "/profile";
 // console.log(navLinkEl)
 
 // put one element into another
-navItemEl.appendChild(navLinkEl);
+// navItemEl.appendChild(navLinkEl);
 // console.log(navItemEl);
 
 
@@ -95,8 +95,8 @@ navItemEl.appendChild(navLinkEl);
 // navEl.appendChild(navItemEl);
 
 // put united element into parents beginning
-const navEl = document.querySelector('.site-nav');
-navEl.insertBefore(navItemEl, navEl.firstElementChild);
+// const navEl = document.querySelector('.site-nav');
+// navEl.insertBefore(navItemEl, navEl.firstElementChild);
 
 // // put united element as second last parents child 
 // const navEl = document.querySelector('.site-nav');
@@ -105,6 +105,104 @@ navEl.insertBefore(navItemEl, navEl.firstElementChild);
 // // put united element anywhere you want
 // const navEl = document.querySelector('.site-nav');
 // navEl.insertBefore(navItemEl, navEl.children[2]);
+
+
+// _____________________________________________________________________
+
+// CREATE ARRAY OF ELEMENTS
+// use div 'color-picker' in html
+
+// const colorPickerOptions = [
+//     { label: 'red', color: '#F44336' },
+//     { label: 'green', color: '#4CAF50' },
+//     { label: 'blue', color: '#2196F3' },
+//     { label: 'grey', color: '#607D8B' },
+//     { label: 'pink', color: '#E91E63' },
+//     { label: 'indigo', color: '#3F51B5' },
+// ];
+
+// const option = colorPickerOptions[5];
+
+// create one element:
+// const buttonEl = document.createElement('button');
+// buttonEl.type = 'button';
+// buttonEl.textContent = option.label;
+// buttonEl.style.backgroundColor = option.color;
+
+// console.log(buttonEl);
+
+
+// PEREBYRAYEMO V TSYKLI IN ORDER TO CREATE ALL BUTTONS ALL AT ONCE (OLDSCHOOL)
+
+
+// const colorPickerContainerEl = document.querySelector('.js-color-picker')
+
+// const elements = [];
+
+// for (let i = 0; i < colorPickerOptions.length; i += 1){
+//     // console.log(colorPickerOptions[i]);
+//     const option = colorPickerOptions[i];
+
+    // const buttonEl = document.createElement('button');
+    // buttonEl.type = 'button';
+    // buttonEl.classList.add('color-picker__option')
+    // buttonEl.textContent = option.label;
+    // buttonEl.style.backgroundColor = option.color;
+
+//     elements.push(buttonEl)
+// }
+
+// // console.log(elements);
+
+// colorPickerContainerEl.append(...elements);
+
+
+// CREATE ALL BUTTONS ALL AT ONCE (NEWSCHOOL)
+
+
+// const colorPickerContainerEl = document.querySelector('.js-color-picker')
+
+// const elements = colorPickerOptions.map(option => {
+    
+//     const buttonEl = document.createElement('button');
+//     buttonEl.type = 'button';
+//     buttonEl.classList.add('color-picker__option')
+//     buttonEl.textContent = option.label;
+//     buttonEl.style.backgroundColor = option.color;
+
+//     return buttonEl;
+// });
+
+// console.log(elements);
+
+// colorPickerContainerEl.append(...elements);
+
+
+// CREATE ALL BUTTONS VIA FUNCTION
+
+
+// const colorPickerContainerEl = document.querySelector('.js-color-picker')
+
+// const makeColorPickeroptions = (options) => {
+//     return options.map(option => {
+//         const buttonEl = document.createElement('button');
+//         buttonEl.type = 'button';
+//         buttonEl.classList.add('color-picker__option')
+//         buttonEl.textContent = option.label;
+//         buttonEl.style.backgroundColor = option.color;
+
+//         return buttonEl;
+//     });
+// };
+
+// const elements = makeColorPickeroptions(colorPickerOptions);
+// colorPickerContainerEl.append(...elements);
+
+
+// _____________________________________________________________________
+
+// CREATE FUNCTION FOR CREATING CARD OF PRODUCT
+
 
 
 // _____________________________________________________________________
