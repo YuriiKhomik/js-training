@@ -201,7 +201,7 @@
 
 // _____________________________________________________________________
 
-// CREATE FUNCTION FOR CREATING CARD OF PRODUCT
+// CREATING CARD OF PRODUCT
 
 
 const product = {
@@ -232,9 +232,13 @@ productEl.append(nameEl, descrEl, priceEl);
 console.log(productEl);
 
 
-
-
 // _____________________________________________________________________
+
+
+// CREATING CARD OF PRODUCT WITH ARRAY OF OBJECTS
+
+
+
 
 
 
