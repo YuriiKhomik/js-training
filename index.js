@@ -15,14 +15,34 @@
 // // check for contain class in HTML element
 // console.log(navEl.classList.contains('qwertyyy'));
 
-// search using attributes in order to change them
+// // // search using attributes in order to change them
 
-const currentPageUrl = '/contacts';
-const linkEl = document.querySelector(
-    `.site-nav__link[href="${currentPageUrl}"]`,
-);
-console.log(linkEl);
-linkEl.classList.add('site-nav__link--current');
+// const currentPageUrl = '/contacts';
+// const linkEl = document.querySelector(
+//     `.site-nav__link[href="${currentPageUrl}"]`,
+// );
+// console.log(linkEl);
+// linkEl.classList.add('site-nav__link--current');
+
+
+
+// /////////////////////////////////////////////////////////////////
+
+// DOM NAVIGATION
+
+// /////////////////////////////////////////////////////////////////
+
+// // quick access to HTML elements
+
+// const navEl = document.querySelector('.site-nav');
+// console.log(navEl.firstElementChild);
+
+
+
+
+
+
+
 
 
 
