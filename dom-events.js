@@ -188,5 +188,61 @@
 
 
 
+// // KEYBOARD EVENTS
+
+// // "keypress" react only to keys, which generate symbols
+// // "keyup" and "keydown" react to all keys  
+
+// const refs = {
+//     output: document.querySelector('.js-output'),
+//     clearBtn: document.querySelector('.js-clear'),
+// };
+
+// window.addEventListener('keypress', onKeyPress);
+// refs.clearBtn.addEventListener('click', onClearOutput);
+
+// // add text from window.input
+// function onKeyPress(event) {
+//     // console.log('event.key: ', event.key);
+//     // console.log('event.code: ', event.code);
+
+//     refs.output.textContent += event.key
+// };
+
+// // clear text from window.input
+// function onClearOutput() {
+//     refs.output.textContent = '';
+// }
+
+
+
+
+// MOUSE EVENTS
+
+// const boxRef = document.querySelector('.js-box');
+
+// // boxRef.addEventListener('mouseenter', onMouseEnter);
+// // boxRef.addEventListener('mouseleave', onMouseLeave);
+// // boxRef.addEventListener('mousemove', onMouseMove);
+
+// function onMouseEnter(event) {
+//     const box = event.currentTarget;
+//     box.classList.add('box--active');
+// };
+
+// function onMouseLeave(event) {
+//     const box = event.currentTarget;
+//     box.classList.remove('box--active');
+// };
+
+// function onMouseMove(event) {
+//     console.log(event);
+// }
+
+
+
+// MODAL WINDOW
+
+
 
 
