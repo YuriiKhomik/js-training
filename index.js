@@ -313,10 +313,10 @@ import transactionHistory from './data/transactions.js'
 
 // _____________________________________________________________________
 
-// TEMPLATE STRINGS
-// (using import on the top∆∆∆)
+// // TEMPLATE STRINGS
+// // (using import on the top∆∆∆)
 
-// console.log(transactionHistory);
+// // console.log(transactionHistory);
 
 // const makeTransactionTableRowMarkup = ({id, amount, date, name, type, business, account}) => {
 
@@ -332,18 +332,19 @@ import transactionHistory from './data/transactions.js'
 //     </tr >`;
 // };
 
-// console.log(transactionHistory)
-// console.log(makeTransactionTableRowMarkup(transactionHistory[2]));
+// // console.log(transactionHistory)
+// // console.log(makeTransactionTableRowMarkup(transactionHistory[2]));
 
 // const tableEl = document.querySelector('.js-transaction-table');
 // const makeTransactionTableRows = transactionHistory
 //     .map(makeTransactionTableRowMarkup)
 //     .join('');
 
-//     tableEl.insertAdjacentHTML('beforeend', makeTransactionTableRows)
+
+// tableEl.insertAdjacentHTML('beforeend', makeTransactionTableRows)
 
 
-// console.log(makeTransactionTableRows);
+// // console.log(makeTransactionTableRows);
 
 
 
