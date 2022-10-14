@@ -68,11 +68,48 @@
 
     <!-- DOM-EVENTS -->
 
-    <p><a href="./index.html">Back to main</a></p>
+    <!-- use for add and remove event listeners -->
 
+    <!-- <p><a href="./index.html">Back to main</a></p>
     <button type="button" class="js-target-btn">Target button</button>
     <button type="button" class="js-add-listener">Add listener</button>
-    <button type="button" class="js-remove-listener">Remove listener</button>
+    <button type="button" class="js-remove-listener">Remove listener</button> -->
+
+    <!-- use for form submit event -->
+
+    <form class="js-register-form" autocomplete="off">
+      <div role="group">
+        <label>
+          Mail
+          <input type="email" name="email" />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" />
+        </label>
+      </div>
+
+      <br />
+
+      <div role="group">
+        <b>Type of subscription</b>
+        <label>
+          <input type="radio" name="subscription" value="free" />
+          Free
+        </label>
+        <label>
+          <input type="radio" name="subscription" value="basic" />
+          Basic
+        </label>
+        <label>
+          <input type="radio" name="subscription" value="pro" />
+          Pro
+        </label>
+      </div>
+
+      <br />
+      <button type="submit">SignUp</button>
+    </form>
 
     <!-- DOM SCRIPT -->
     <!-- <script src="./index.js" type="module"></script> -->
