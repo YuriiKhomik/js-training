@@ -132,7 +132,7 @@
 // function onFormSubmit(event) {
 //     event.preventDefault();
 
-//     // form Data gathers all information from form
+//     // form Data gathers all information from form///we use it to send data to server
 //     const formData = new FormData(event.currentTarget);
     
 //     formData.forEach((value, name) => {
