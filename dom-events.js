@@ -93,8 +93,54 @@
 
 
 
-// // FORM SUBMIT EVENT
+// FORM SUBMIT EVENT
 
+// // form data gather one by one:
+
+// const form = document.querySelector('.js-register-form');
+
+// form.addEventListener('submit', onFormSubmit);
+
+// function onFormSubmit(event) {
+//     // prevents from reload, for example
+//     event.preventDefault();
+
+//     // getting access to form elements
+//     const formElements = event.currentTarget.elements;
+//     console.dir(formElements);
+
+//     const mail = formElements.email.value;
+//     const password = formElements.password.value;
+//     const subscription = formElements.subscription.value;
+//     // console.log(mail, password, subscription);
+
+//     const formData = {
+//         mail,
+//         password,
+//         subscription,
+//     };
+
+//     console.log(formData)
+// };
+
+
+// // form data gather ALL by one:
+// const form = document.querySelector('.js-register-form');
+
+// form.addEventListener('submit', onFormSubmit);
+
+// function onFormSubmit(event) {
+//     event.preventDefault();
+
+//     // form Data gathers all information from form
+//     const formData = new FormData(event.currentTarget);
+    
+//     formData.forEach((value, name) => {
+//         console.log('on form submit -> name', name);
+//         console.log('on form submit -> value', value);
+//     });
+
+// };
 
 
 
