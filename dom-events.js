@@ -93,8 +93,3 @@
 
 
 
-
-function logMessage() {
-    console.log('click on target button')
-};
-
