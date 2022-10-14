@@ -241,7 +241,73 @@
 
 
 
-// MODAL WINDOW
+// // MODAL WINDOW
+
+// const refs = {
+//     // square brackets for attribute selector
+//     openModalBtn: document.querySelector('[data-action="open-modal"]'),
+//     closeModalBtn: document.querySelector('[data-action="close-modal"]'),
+//     backdrop: document.querySelector('.js-backdrop'),
+// };
+// // adding event listeners
+// refs.openModalBtn.addEventListener('click', onOpenModal);
+// refs.closeModalBtn.addEventListener('click', onCloseModal);
+// refs.backdrop.addEventListener('click', onBackDropClick)
+
+
+// // add&remove class "show-modal" when click on button
+// function onOpenModal() {
+//     // add event listener for ESC KEY when modal is open
+//     window.addEventListener('keydown', onEscKeyPress)
+//     console.log(document.body.classList.add('show-modal'));
+// };
+
+// function onCloseModal() {
+//     // remove event listener for ESC KEY when modal is closed
+//     window.removeEventListener('keydown', onEscKeyPress)
+//     console.log(document.body.classList.remove('show-modal'));
+// };
+
+// function onBackDropClick(event) {
+//     // console.log('click on backdrop');
+
+//     // shows which element is subscribed for event
+//     // console.log(event.currentTarget);
+
+//     // shows on which element event happened
+//     // console.log(event.target)
+
+//     if (event.currentTarget === event.target) {
+//         console.log('Clicked exactly on backdrop')
+//         // invoke function for close
+//         onCloseModal();
+//     };
+// }
+
+// // function onEscKeyPress(event) {
+// //     console.log(event)
+// //     // add rule for ESC BUTTON:
+// //     if (event.code === 'Escape') {
+// //         onCloseModal();
+// //     }
+// // }
+
+// // OR:
+
+// function onEscKeyPress(event) {
+//     const ESC_KEY_CODE = 'Escape';
+//     const isEscKey = event.code === ESC_KEY_CODE;
+    
+//     if (isEscKey) {
+//         onCloseModal();
+//     }
+// }
+
+
+
+
+
+
 
 
 
