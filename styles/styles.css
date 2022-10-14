@@ -54,11 +54,13 @@ body {
 
 .transaction-table{
     border: 1px solid black;
-}
+};
 
 table{
     /* border-collapse: collapse; */
     border: 1px solid black;
-}
+};
+
+
 
 
