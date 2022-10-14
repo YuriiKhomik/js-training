@@ -50,7 +50,7 @@ import transactionHistory from './data/transactions.js'
 
 // CREATE ELEMENT
 
-// create in memory
+// // create in memory
 // const titleEl = document.createElement('h1');
 // // add class
 // titleEl.classList.add('page-title');
@@ -59,8 +59,8 @@ import transactionHistory from './data/transactions.js'
 // // console.log(titleEl);
 
 // // add to HTML via appendChild (add in the end of PARENTS element)
-// // document.body.appendChild(titleEl);
-// // console.log(document.body);
+// document.body.appendChild(titleEl);
+// console.log(document.body);
 
 
 
@@ -75,8 +75,8 @@ import transactionHistory from './data/transactions.js'
 
 // // create in memory 2 elements (hero title + image)
 // const heroEl = document.querySelector('.hero');
-// // heroEl.appendChild(titleEl);
-// // heroEl.appendChild(imageEl);
+// heroEl.appendChild(titleEl);
+// heroEl.appendChild(imageEl);
 // // OR VIA ONE OPERATION (use when need to add 2 or more neighbours into parent element)
 // heroEl.append(titleEl, imageEl);
 
@@ -130,7 +130,7 @@ import transactionHistory from './data/transactions.js'
 
 // const option = colorPickerOptions[5];
 
-// create one element:
+// // create one element:
 // const buttonEl = document.createElement('button');
 // buttonEl.type = 'button';
 // buttonEl.textContent = option.label;
@@ -150,16 +150,16 @@ import transactionHistory from './data/transactions.js'
 //     // console.log(colorPickerOptions[i]);
 //     const option = colorPickerOptions[i];
 
-    // const buttonEl = document.createElement('button');
-    // buttonEl.type = 'button';
-    // buttonEl.classList.add('color-picker__option')
-    // buttonEl.textContent = option.label;
-    // buttonEl.style.backgroundColor = option.color;
+//     const buttonEl = document.createElement('button');
+//     buttonEl.type = 'button';
+//     buttonEl.classList.add('color-picker__option')
+//     buttonEl.textContent = option.label;
+//     buttonEl.style.backgroundColor = option.color;
 
 //     elements.push(buttonEl)
 // }
 
-// // console.log(elements);
+// console.log(elements);
 
 // colorPickerContainerEl.append(...elements);
 
@@ -211,13 +211,13 @@ import transactionHistory from './data/transactions.js'
 // CREATING CARD OF PRODUCT
 
 
-// const product = {
-//     name: 'Steering wheels',
-//     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, impedit aliquid! Doloribus fugiat libero, voluptatem culpa minima eius esse sapiente.',
-//     price: 2000,
-//     available: true,
-//     onSale: true,
-// };
+const product = {
+    name: 'Steering wheels',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, impedit aliquid! Doloribus fugiat libero, voluptatem culpa minima eius esse sapiente.',
+    price: 2000,
+    available: true,
+    onSale: true,
+};
 
 // const productEl = document.createElement('article');
 // productEl.classList.add('product');
@@ -270,11 +270,11 @@ import transactionHistory from './data/transactions.js'
 
 // // console.log(makeProductCard(products[2]));
 
-// // creating array of elements (multiple cards with products) function 'makeProductCard' is used as callback
+// // // creating array of elements (multiple cards with products) function 'makeProductCard' is used as callback
 // const elements = products.map(makeProductCard);
 // console.log(elements);
 
-// // and adding this cards to parent HTML
+// // // and adding this cards to parent HTML
 // const productContainerEl = document.querySelector('.js-products');
 // productContainerEl.append(...elements);
 
