@@ -95,7 +95,7 @@
 
 // FORM SUBMIT EVENT
 
-// // form data gather one by one:
+// form data gather one by one:
 
 // const form = document.querySelector('.js-register-form');
 
@@ -155,23 +155,23 @@
 //     btn: document.querySelector('.js-button'),
 // };
 
-// // refs.input.addEventListener('focus', onInputFocus);
-// // refs.input.addEventListener('blur', onInputBlur);
+// refs.input.addEventListener('focus', onInputFocus);
+// refs.input.addEventListener('blur', onInputBlur);
 // // // use only for checkboxes etc...
 // // refs.input.addEventListener('change', onInputChange);
 // // // use for text
 // // refs.input.addEventListener('input', onInputChange);
 
-// refs.input.addEventListener('input', onInputChange);
-// refs.licenseCheckbox.addEventListener('change', onLicenseChange);
+// // refs.input.addEventListener('input', onInputChange);
+// // refs.licenseCheckbox.addEventListener('change', onLicenseChange);
 
-// // function onInputFocus() {
-// //     console.log('Input got focus - event "focus"')
-// // };
+// function onInputFocus(event) {
+//     console.log('Input got focus - event "focus"')
+// };
 
-// // function onInputBlur() {
-// //     console.log('Input lost focus - event "blur"')
-// // };
+// function onInputBlur(event) {
+//     console.log('Input lost focus - event "blur"')
+// };
 
 // function onInputChange(event) {
 //     // console.log(event.currentTarget.value);
@@ -217,13 +217,13 @@
 
 
 
-// MOUSE EVENTS
+// // MOUSE EVENTS
 
 // const boxRef = document.querySelector('.js-box');
 
 // // boxRef.addEventListener('mouseenter', onMouseEnter);
 // // boxRef.addEventListener('mouseleave', onMouseLeave);
-// // boxRef.addEventListener('mousemove', onMouseMove);
+// boxRef.addEventListener('mousemove', onMouseMove);
 
 // function onMouseEnter(event) {
 //     const box = event.currentTarget;
@@ -241,7 +241,7 @@
 
 
 
-// // MODAL WINDOW
+// MODAL WINDOW
 
 // const refs = {
 //     // square brackets for attribute selector

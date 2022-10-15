@@ -13,7 +13,7 @@ import transactionHistory from './data/transactions.js'
 // navEl.classList.remove('super-cool');
 // navEl.classList.replace('super-cool', 'qwerty');
 
-// // toggle class in HTML element
+// // // toggle class in HTML element
 // const magicBtn = document.querySelector('.magic-btn');
 // magicBtn.addEventListener('click', () => {
 //     navEl.classList.toggle('qwertyqqq');
@@ -130,7 +130,7 @@ import transactionHistory from './data/transactions.js'
 
 // const option = colorPickerOptions[5];
 
-// // create one element:
+// create one element:
 // const buttonEl = document.createElement('button');
 // buttonEl.type = 'button';
 // buttonEl.textContent = option.label;
@@ -170,7 +170,6 @@ import transactionHistory from './data/transactions.js'
 // const colorPickerContainerEl = document.querySelector('.js-color-picker')
 
 // const elements = colorPickerOptions.map(option => {
-    
 //     const buttonEl = document.createElement('button');
 //     buttonEl.type = 'button';
 //     buttonEl.classList.add('color-picker__option')
@@ -211,13 +210,13 @@ import transactionHistory from './data/transactions.js'
 // CREATING CARD OF PRODUCT
 
 
-const product = {
-    name: 'Steering wheels',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, impedit aliquid! Doloribus fugiat libero, voluptatem culpa minima eius esse sapiente.',
-    price: 2000,
-    available: true,
-    onSale: true,
-};
+// const product = {
+//     name: 'Steering wheels',
+//     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, impedit aliquid! Doloribus fugiat libero, voluptatem culpa minima eius esse sapiente.',
+//     price: 2000,
+//     available: true,
+//     onSale: true,
+// };
 
 // const productEl = document.createElement('article');
 // productEl.classList.add('product');
@@ -281,33 +280,33 @@ const product = {
 
 // _____________________________________________________________________
 
-// STRING PARSE
+// // STRING PARSE
 
 // const titleEl = document.querySelector('.title');
 
-// textContent returns all textcontent
+// // textContent returns all textcontent
 // console.log(titleEl.textContent);
 
-// inner html returns html markup from opening tag to closing tag
+// // inner html returns html markup from opening tag to closing tag
  
 // console.log(titleEl.innerHTML);
 
-// USE IT ONLY IF YOU NEED CLEAN ALL CONTENT OR CHANGE ALL CONTENT (parser see all markup and creates markup in accordance with what is written in quotation marks)
+// // USE IT ONLY IF YOU NEED CLEAN ALL CONTENT OR CHANGE ALL CONTENT (parser see all markup and creates markup in accordance with what is written in quotation marks)
 
-// titleEl.innerHTML = '<a href="">This is anchor</a>'
+// // titleEl.innerHTML = '<a href="">This is anchor</a>'
 
-// HOW TO ADD SOMETHING TO EXISTING HTML:
+// // HOW TO ADD SOMETHING TO EXISTING HTML:
 
-// neighbour before
+// // // neighbour before
 // titleEl.insertAdjacentHTML('beforebegin', '<a href="">This is anchor</a>')
 
-// neighbour after
+// // // neighbour after
 // titleEl.insertAdjacentHTML('afterend', '<a href="">This is anchor</a>')
 
-// before
+// // // before
 // titleEl.insertAdjacentHTML('afterbegin', '<a href="">This is anchor</a>')
 
-// after
+// // // after
 // titleEl.insertAdjacentHTML('beforeend', '<a href="">This is anchor</a>')
 
 
@@ -316,7 +315,7 @@ const product = {
 // // TEMPLATE STRINGS
 // // (using import on the top∆∆∆)
 
-// // console.log(transactionHistory);
+// console.log(transactionHistory);
 
 // const makeTransactionTableRowMarkup = ({id, amount, date, name, type, business, account}) => {
 
@@ -340,11 +339,15 @@ const product = {
 //     .map(makeTransactionTableRowMarkup)
 //     .join('');
 
+// console.log(makeTransactionTableRows);
+
 
 // tableEl.insertAdjacentHTML('beforeend', makeTransactionTableRows)
 
 
 // // console.log(makeTransactionTableRows);
+
+
 
 
 
