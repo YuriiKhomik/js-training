@@ -166,7 +166,7 @@
 
 // COLOR-PICKER
 
-const colors = [
+const clrs = [
     { hex: '#f44336', rgb: '244,67,54' },
     { hex: '#e91e63', rgb: '233,30,99' },
     { hex: '#9c27b0', rgb: '156,39,176' },
@@ -182,12 +182,16 @@ const colors = [
     { hex: '#607d8b', rgb: '96,125,139' },
 ];
 
+// посилання на батьківський контейнер
 const paletteContainer = document.querySelector('.js-palette');
-const cardsarkup = createColorCardsMarkup(colors);
+// змінна для сформованої розмітки із всіма кольорами
+const cardsMarkup = createColorCardsMarkup(clrs);
+// вставляємо цю розмітку в батьківський контейнер
+paletteContainer.insertAdjacentHTML('beforeend', cardsMarkup);
 
-paletteContainer.insertAdjacentHTML('beforeend', cardsarkup)
+paletteContainer.addEventListener('click', onPaletteContainerClick)
 
-console.log(createColorCardsMarkup(colors));
+
 
 function createColorCardsMarkup(colors) {
     return colors.map(({hex, rgb}) => {
@@ -208,4 +212,49 @@ function createColorCardsMarkup(colors) {
         ;
     })
         .join('');
+}
+
+// console.log(createColorCardsMarkup(clrs));
+
+function onPaletteContainerClick(evt) {
+    // if (!evt.target.classList.contains('color-swatch')) {
+    //     return
+    // } else {
+    //     console.log(evt.target)
+    // };
+
+    // or via variable:
+    const isColorSwatchEl = evt.target.classList.contains('color-swatch');
+
+    if (!isColorSwatchEl) {
+        return
+    } else {
+        // console.log(evt.target)
+    };
+
+    // шукаємо активну картку:
+    const currentActiveCard = document.querySelector('.color-card.is-active');
+
+    // забираємо активний клас
+    if (currentActiveCard) {
+        currentActiveCard.classList.remove('is-active')
+    };
+
+    const swatchEl = evt.target;
+    // // parentNode зберігає посилання на батьківський елемент вибраного елемента
+    // // але цей метод не ок, щоби достукатись до батька, бо якщо вкладеність елемента
+    // // зміниться - ми не зможемо достукатись до потрібного батька
+    // const parentColorCard = swatchEl.parentNode;
+
+    // для таких цілей є метод closest:
+    // він буде йти догори по вкладеності і знайде перший елемент із вказаним селектором
+    const parentColorCard = swatchEl.closest('.color-card');
+    parentColorCard.classList.add('is-active');
+
+    // передаємо значення активного кольору на колір body
+    document.body.style.backgroundColor = swatchEl.dataset.hex;
+
+
+    
+    // console.log(evt.target.dataset.hex);
 }
