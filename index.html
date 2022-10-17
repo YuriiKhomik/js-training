@@ -185,10 +185,82 @@
         <button class="button" type="button" data-action="close-modal">Close</button>
       </div>
     </div> -->
+
+    <!--EVENT_DELEGATION-->
+
+    <!-- use for event-bubbling -->
+
+    <!-- <div id="parent">
+      Parent
+      <div id="child">
+        Child
+        <div id="inner-child">inner-child</div>
+      </div>
+    </div> -->
+
+    <!-- use for event-delegation -->
+
+    <!-- <button class="js-add-btn">Add button</button>
+    <hr />
+
+    <div class="js-container" style="outline: 1px solid tomato">
+      <button type="button">Button1</button>
+      <button type="button">Button2</button>
+      <button type="button">Button3</button>
+      <button type="button">Button4</button>
+      <button type="button">Button5</button>
+    </div> -->
+
+    <!-- one more example for event delegation -->
+
+    <style>
+      .tags {
+        box-sizing: border-box;
+        display: flex;
+        list-style: none;
+      }
+
+      .tags__btn {
+        height: 40px;
+        width: 80px;
+      }
+    </style>
+
+    <ul class="tags js-tags">
+      <li class="tags__item">
+        <button class="tags__btn" data-value="html">#html</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="css">#css</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="java-script">#java-script</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="npm">#npm</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="webpack">#webpack</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="react">#react</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="redux">#redux</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="node-js">#node-js</button>
+      </li>
+    </ul>
+
     <!-- DOM SCRIPT -->
     <!-- <script src="./index.js" type="module"></script> -->
 
     <!-- DOM-EVENTS SCRIPT -->
     <!-- <script src="./dom-events.js" type="module"></script> -->
+
+    <!-- EVENT-DELEGATION SCRIPT-->
+
+    <script src="./event-delegation.js" type="module"></script>
   </body>
 </html>
