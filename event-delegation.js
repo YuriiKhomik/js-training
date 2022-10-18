@@ -306,7 +306,7 @@
 
 
 
-// CHATTY EVENTS
+// CHATTY EVENTS throttle&debounce призначені для оптимізації обробки подій від користувача (scroll, resize, drag, mousemove, input)
 
 // // підхід, при якому відбвуається надто дагато викликів функції під час руху мишки
 
@@ -324,22 +324,8 @@
 //     Y: ${event.clientY}`;
 // };
 
-// const inputRef = document.querySelector('.js-input');
-// const outputRef = document.querySelector('.js-output');
 
-// let inputCbInvolationCounter = 0;
-
-// inputRef.addEventListener('input', onInputChange);
-
-// function onInputChange(event) {
-    
-//     inputCbInvolationCounter += 1;
-
-//     outputRef.textContent = `кількість викликів onInputChange: ${inputCbInvolationCounter}. Значення: ${event.target.value}`
-// };
-
-
-// // підхід із TROTTLE
+// // підхід із TROTTLE (використовується при зміні розміру вікна, скролі, драгу)
 
 // const coordsOutputRef = document.querySelector('.js-coords');
 // let mouseMoveCbInvokationCounter = 0;
@@ -357,6 +343,11 @@
 //     Y: ${event.clientY}`;
 // };
 
+
+
+// DEBOUNCE
+
+// // без DEBOUNCE
 // const inputRef = document.querySelector('.js-input');
 // const outputRef = document.querySelector('.js-output');
 
@@ -372,35 +363,240 @@
 // };
 
 
+// // із DEBOUNCE (використовується при пошуку, коли юзер вводить слово, мичекаємо, коли слово буде введене повністю)
+// const inputRef = document.querySelector('.js-input');
+// const outputRef = document.querySelector('.js-output');
 
-// підхід із DEBOUNCE
+// let inputCbInvolationCounter = 0;
 
-const coordsOutputRef = document.querySelector('.js-coords');
-let mouseMoveCbInvokationCounter = 0;
+// inputRef.addEventListener('input', _.debounce(onInputChange, 300));
 
-const throttledOnMouseMove = _.throttle(onMouseMove, 500);
-
-window.addEventListener('mousemove', throttledOnMouseMove);
-
-function onMouseMove(event) {
-    mouseMoveCbInvokationCounter += 1;
-
-    coordsOutputRef.textContent = `
-    кількість викликів onMouseMove: ${mouseMoveCbInvokationCounter},
-    X: ${event.clientX},
-    Y: ${event.clientY}`;
-};
-
-const inputRef = document.querySelector('.js-input');
-const outputRef = document.querySelector('.js-output');
-
-let inputCbInvolationCounter = 0;
-
-inputRef.addEventListener('input', onInputChange);
-
-function onInputChange(event) {
+// function onInputChange(event) {
     
-    inputCbInvolationCounter += 1;
+//     inputCbInvolationCounter += 1;
 
-    outputRef.textContent = `кількість викликів onInputChange: ${inputCbInvolationCounter}. Значення: ${event.target.value}`
+//     outputRef.textContent = `кількість викликів onInputChange: ${inputCbInvolationCounter}. Значення: ${event.target.value}`
+// };
+
+
+
+// SEARCH FILTER
+// // array of objects
+// const tech = [
+//     { label: 'HTML' },
+//     { label: 'CSS' },
+//     { label: 'Java-Script' },
+//     { label: 'Node.JS' },
+//     { label: 'React' },
+//     { label: 'Vue' },
+//     { label: 'Next.JS' },
+//     { label: 'Mobx' },
+//     { label: 'Redux' },
+//     { label: 'React Router' },
+//     { label: 'GraphQL' },
+//     { label: 'PostgreSQL' },
+//     { label: 'MongoDB' },
+// ];
+
+// // references
+// const refs = {
+//     list: document.querySelector('.js-list'),
+//     input: document.querySelector('#filter'),
+// };
+
+// // creating list with objects from array
+// const listItemsMarkup = createListItemsMarkup(tech);
+
+// // use inner html, when parent item is empty and insertAdjascentHtml when there is smth in parent item
+// // add created list to html:
+// refs.list.innerHTML = listItemsMarkup;
+
+// // creating markup as one string(.join)
+// function createListItemsMarkup(items) {
+//     return items.map(item => `<li>${item.label}</li>`).join('');
+// };
+
+
+// // CREATING FILTER
+// // array of objects
+// const tech = [
+//     { label: 'HTML' },
+//     { label: 'CSS' },
+//     { label: 'Java-Script' },
+//     { label: 'Node.JS' },
+//     { label: 'React' },
+//     { label: 'Vue' },
+//     { label: 'Next.JS' },
+//     { label: 'Mobx' },
+//     { label: 'Redux' },
+//     { label: 'React Router' },
+//     { label: 'GraphQL' },
+//     { label: 'PostgreSQL' },
+//     { label: 'MongoDB' },
+// ];
+
+// const refs = {
+//     list: document.querySelector('.js-list'),
+//     input: document.querySelector('#filter'),
+// };
+
+// refs.input.addEventListener('input', onFilterChange)
+
+// // рендеримо список, щоби юзер бачив, з чого вибирати
+// const listItemsMarkup = createListItemsMarkup(tech);
+// refs.list.innerHTML = listItemsMarkup;
+
+// function createListItemsMarkup(items) {
+//     return items.map(item => `<li>${item.label}</li>`).join('');
+// };
+
+// function onFilterChange(evt) {
+//     // отримуємо фільтр із інтерфейсу
+//     const filter = evt.target.value.toLowerCase();
+//     // з моделі відфільтрував ті об'єкти, які мені зараз підходять (зробив новий масив відфільтрованих)
+//     const filteredItems = tech.filter(t => t.label.toLocaleLowerCase().includes(filter));
+//     // створив розмітку під відфільтрований масив
+//     const listItemsMarkup = createListItemsMarkup(filteredItems);
+//     // і повністю замінив розмітку UL
+//     populateList(listItemsMarkup)
+// }
+
+// function populateList(markup) {
+//     refs.list.innerHTML = markup;
+// }
+
+
+// // the same but with throttle:
+
+// // CREATING FILTER
+// // array of objects
+// const tech = [
+//     { label: 'HTML' },
+//     { label: 'CSS' },
+//     { label: 'Java-Script' },
+//     { label: 'Node.JS' },
+//     { label: 'React' },
+//     { label: 'Vue' },
+//     { label: 'Next.JS' },
+//     { label: 'Mobx' },
+//     { label: 'Redux' },
+//     { label: 'React Router' },
+//     { label: 'GraphQL' },
+//     { label: 'PostgreSQL' },
+//     { label: 'MongoDB' },
+// ];
+
+// const refs = {
+//     list: document.querySelector('.js-list'),
+//     input: document.querySelector('#filter'),
+// };
+
+// refs.input.addEventListener('input', _.throttle(onFilterChange, 1000))
+
+// // рендеримо список, щоби юзер бачив, з чого вибирати
+// const listItemsMarkup = createListItemsMarkup(tech);
+// refs.list.innerHTML = listItemsMarkup;
+
+// function createListItemsMarkup(items) {
+//     return items.map(item => `<li>${item.label}</li>`).join('');
+// };
+
+// function onFilterChange(evt) {
+//     // отримуємо фільтр із інтерфейсу
+//     const filter = evt.target.value.toLowerCase();
+//     // з моделі відфільтрував ті об'єкти, які мені зараз підходять (зробив новий масив відфільтрованих)
+//     const filteredItems = tech.filter(t => t.label.toLocaleLowerCase().includes(filter));
+//     // створив розмітку під відфільтрований масив
+//     const listItemsMarkup = createListItemsMarkup(filteredItems);
+//     // і повністю замінив розмітку UL
+//     populateList(listItemsMarkup)
+// }
+
+// function populateList(markup) {
+//     refs.list.innerHTML = markup;
+// }
+
+
+// // the same but with debounce:
+
+// // CREATING FILTER
+// // array of objects
+// const tech = [
+//     { label: 'HTML' },
+//     { label: 'CSS' },
+//     { label: 'Java-Script' },
+//     { label: 'Node.JS' },
+//     { label: 'React' },
+//     { label: 'Vue' },
+//     { label: 'Next.JS' },
+//     { label: 'Mobx' },
+//     { label: 'Redux' },
+//     { label: 'React Router' },
+//     { label: 'GraphQL' },
+//     { label: 'PostgreSQL' },
+//     { label: 'MongoDB' },
+// ];
+
+// const refs = {
+//     list: document.querySelector('.js-list'),
+//     input: document.querySelector('#filter'),
+// };
+
+// refs.input.addEventListener('input', _.debounce(onFilterChange, 1000))
+
+// // рендеримо список, щоби юзер бачив, з чого вибирати
+// const listItemsMarkup = createListItemsMarkup(tech);
+// refs.list.innerHTML = listItemsMarkup;
+
+// function createListItemsMarkup(items) {
+//     return items.map(item => `<li>${item.label}</li>`).join('');
+// };
+
+// function onFilterChange(evt) {
+//     // отримуємо фільтр із інтерфейсу
+//     const filter = evt.target.value.toLowerCase();
+//     // з моделі відфільтрував ті об'єкти, які мені зараз підходять (зробив новий масив відфільтрованих)
+//     const filteredItems = tech.filter(t => t.label.toLocaleLowerCase().includes(filter));
+//     // створив розмітку під відфільтрований масив
+//     const listItemsMarkup = createListItemsMarkup(filteredItems);
+//     // і повністю замінив розмітку UL
+//     populateList(listItemsMarkup)
+// }
+
+// function populateList(markup) {
+//     refs.list.innerHTML = markup;
+// }
+
+// // (if need - use fuse.JS for pukhnastyi poshuk)
+
+
+// // LASYLOAD IMG (we need to add attribute loading="lazy" to every img in HTML)
+
+// const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+// // console.log(lazyImages);
+
+// // вішаємо слухача на кожну картинку (з допомогою {once:true} івент лісенер виконається лише один раз і потім самовидалиться)
+// lazyImages.forEach(image => { image.addEventListener('load', onImageLoaded, {once: true})});
+
+// // коли відбувається lazyload, то вішаємо на картинку клас із анімацією
+// function onImageLoaded(evt) {
+//     console.log('image loaded', evt);
+//     evt.target.classList.add('appear')
+// };
+
+
+// // LASYLOAD IMG VIA LIBRARY
+
+const lazyImages = document.querySelectorAll('img[data-src]');
+// console.log(lazyImages);
+
+// вішаємо слухача на кожну картинку (з допомогою {once:true} івент лісенер виконається лише один раз і потім самовидалиться)
+lazyImages.forEach(image => { image.addEventListener('load', onImageLoaded, {once: true})});
+
+// коли відбувається lazyload, то вішаємо на картинку клас із анімацією
+function onImageLoaded(evt) {
+    console.log('image loaded', evt);
+    evt.target.classList.add('appear')
 };
+
+
