@@ -303,3 +303,104 @@
 //     card.classList.add('is-active');
 // };
 
+
+
+
+// CHATTY EVENTS
+
+// // підхід, при якому відбвуається надто дагато викликів функції під час руху мишки
+
+// const coordsOutputRef = document.querySelector('.js-coords');
+// let mouseMoveCbInvokationCounter = 0;
+
+// window.addEventListener('mousemove', onMouseMove);
+
+// function onMouseMove(event) {
+//     mouseMoveCbInvokationCounter += 1;
+
+//     coordsOutputRef.textContent = `
+//     кількість викликів onMouseMove: ${mouseMoveCbInvokationCounter},
+//     X: ${event.clientX},
+//     Y: ${event.clientY}`;
+// };
+
+// const inputRef = document.querySelector('.js-input');
+// const outputRef = document.querySelector('.js-output');
+
+// let inputCbInvolationCounter = 0;
+
+// inputRef.addEventListener('input', onInputChange);
+
+// function onInputChange(event) {
+    
+//     inputCbInvolationCounter += 1;
+
+//     outputRef.textContent = `кількість викликів onInputChange: ${inputCbInvolationCounter}. Значення: ${event.target.value}`
+// };
+
+
+// // підхід із TROTTLE
+
+// const coordsOutputRef = document.querySelector('.js-coords');
+// let mouseMoveCbInvokationCounter = 0;
+
+// const throttledOnMouseMove = _.throttle(onMouseMove, 500);
+
+// window.addEventListener('mousemove', throttledOnMouseMove);
+
+// function onMouseMove(event) {
+//     mouseMoveCbInvokationCounter += 1;
+
+//     coordsOutputRef.textContent = `
+//     кількість викликів onMouseMove: ${mouseMoveCbInvokationCounter},
+//     X: ${event.clientX},
+//     Y: ${event.clientY}`;
+// };
+
+// const inputRef = document.querySelector('.js-input');
+// const outputRef = document.querySelector('.js-output');
+
+// let inputCbInvolationCounter = 0;
+
+// inputRef.addEventListener('input', onInputChange);
+
+// function onInputChange(event) {
+    
+//     inputCbInvolationCounter += 1;
+
+//     outputRef.textContent = `кількість викликів onInputChange: ${inputCbInvolationCounter}. Значення: ${event.target.value}`
+// };
+
+
+
+// підхід із DEBOUNCE
+
+const coordsOutputRef = document.querySelector('.js-coords');
+let mouseMoveCbInvokationCounter = 0;
+
+const throttledOnMouseMove = _.throttle(onMouseMove, 500);
+
+window.addEventListener('mousemove', throttledOnMouseMove);
+
+function onMouseMove(event) {
+    mouseMoveCbInvokationCounter += 1;
+
+    coordsOutputRef.textContent = `
+    кількість викликів onMouseMove: ${mouseMoveCbInvokationCounter},
+    X: ${event.clientX},
+    Y: ${event.clientY}`;
+};
+
+const inputRef = document.querySelector('.js-input');
+const outputRef = document.querySelector('.js-output');
+
+let inputCbInvolationCounter = 0;
+
+inputRef.addEventListener('input', onInputChange);
+
+function onInputChange(event) {
+    
+    inputCbInvolationCounter += 1;
+
+    outputRef.textContent = `кількість викликів onInputChange: ${inputCbInvolationCounter}. Значення: ${event.target.value}`
+};
