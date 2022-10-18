@@ -216,22 +216,80 @@ function createColorCardsMarkup(colors) {
 
 // console.log(createColorCardsMarkup(clrs));
 
-function onPaletteContainerClick(evt) {
-    // if (!evt.target.classList.contains('color-swatch')) {
-    //     return
-    // } else {
-    //     console.log(evt.target)
-    // };
+// function onPaletteContainerClick(evt) {
+//     // if (!evt.target.classList.contains('color-swatch')) {
+//     //     return
+//     // } else {
+//     //     console.log(evt.target)
+//     // };
 
-    // or via variable:
+//     // or via variable:
+//     const isColorSwatchEl = evt.target.classList.contains('color-swatch');
+
+//     if (!isColorSwatchEl) {
+//         return
+//     } else {
+//         // console.log(evt.target)
+//     };
+
+//     // шукаємо активну картку:
+//     const currentActiveCard = document.querySelector('.color-card.is-active');
+
+//     // забираємо активний клас
+//     if (currentActiveCard) {
+//         currentActiveCard.classList.remove('is-active')
+//     };
+
+//     const swatchEl = evt.target;
+//     // // parentNode зберігає посилання на батьківський елемент вибраного елемента
+//     // // але цей метод не ок, щоби достукатись до батька, бо якщо вкладеність елемента
+//     // // зміниться - ми не зможемо достукатись до потрібного батька
+//     // const parentColorCard = swatchEl.parentNode;
+
+//     // для таких цілей є метод closest:
+//     // він буде йти догори по вкладеності і знайде перший елемент із вказаним селектором
+//     const parentColorCard = swatchEl.closest('.color-card');
+//     parentColorCard.classList.add('is-active');
+
+//     // передаємо значення активного кольору на колір body
+//     document.body.style.backgroundColor = swatchEl.dataset.hex;
+
+
+    
+//     // console.log(evt.target.dataset.hex);    
+// } 
+
+//  в попередній функції надто багато завдань
+// розбиваємо її на менші фенкції:
+
+function onPaletteContainerClick(evt) {
+    // отримуємо посилання на елемент
     const isColorSwatchEl = evt.target.classList.contains('color-swatch');
 
+    // фільтруємо події виключно на цьому елементі
     if (!isColorSwatchEl) {
-        return
-    } else {
-        // console.log(evt.target)
+        return;
     };
 
+    // змінна для елементу, по якому відбулась подія
+    const swatchEl = evt.target;
+    // змінна для його батьківського елементу з потрібним класом
+    const parentColorCard = swatchEl.closest('.color-card');
+    
+    // видаляємо активний клас
+    removeActiveCardClass()
+    // додаємо активний клас
+    addActiveCardClass(parentColorCard)
+    // передаємо значення активного кольору на колір body
+    setBodyBgColor(swatchEl.dataset.hex)
+};
+
+
+function setBodyBgColor (color){
+     document.body.style.backgroundColor = color;
+};
+
+function removeActiveCardClass() {
     // шукаємо активну картку:
     const currentActiveCard = document.querySelector('.color-card.is-active');
 
@@ -239,22 +297,8 @@ function onPaletteContainerClick(evt) {
     if (currentActiveCard) {
         currentActiveCard.classList.remove('is-active')
     };
+};
 
-    const swatchEl = evt.target;
-    // // parentNode зберігає посилання на батьківський елемент вибраного елемента
-    // // але цей метод не ок, щоби достукатись до батька, бо якщо вкладеність елемента
-    // // зміниться - ми не зможемо достукатись до потрібного батька
-    // const parentColorCard = swatchEl.parentNode;
-
-    // для таких цілей є метод closest:
-    // він буде йти догори по вкладеності і знайде перший елемент із вказаним селектором
-    const parentColorCard = swatchEl.closest('.color-card');
-    parentColorCard.classList.add('is-active');
-
-    // передаємо значення активного кольору на колір body
-    document.body.style.backgroundColor = swatchEl.dataset.hex;
-
-
-    
-    // console.log(evt.target.dataset.hex);
+function addActiveCardClass(card) {
+    card.classList.add('is-active');
 }
