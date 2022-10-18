@@ -585,19 +585,19 @@
 // };
 
 
-// // LASYLOAD IMG VIA LIBRARY
+// // LASYLOAD IMG VIA LIBRARY (насправді, коли додаємо бібліотеку, то в JS залишається прописати хіба стилі)
 
-const lazyImages = document.querySelectorAll('img[data-src]');
-// console.log(lazyImages);
+// const lazyImages = document.querySelectorAll('img[data-src]');
+// // console.log(lazyImages);
 
-// вішаємо слухача на кожну картинку (з допомогою {once:true} івент лісенер виконається лише один раз і потім самовидалиться)
-lazyImages.forEach(image => { image.addEventListener('load', onImageLoaded, {once: true})});
+// // вішаємо слухача на кожну картинку (з допомогою {once:true} івент лісенер виконається лише один раз і потім самовидалиться)
+// lazyImages.forEach(image => { image.addEventListener('load', onImageLoaded, {once: true})});
 
-// коли відбувається lazyload, то вішаємо на картинку клас із анімацією
-function onImageLoaded(evt) {
-    console.log('image loaded', evt);
-    evt.target.classList.add('appear')
-};
+// // коли відбувається lazyload, то вішаємо на картинку клас із анімацією
+// function onImageLoaded(evt) {
+//     console.log('image loaded', evt);
+//     evt.target.classList.add('appear')
+// };
 
 
 // HOW DO I HANDLE NATIVE LAZYLOADING
@@ -610,9 +610,8 @@ if ('loading' in HTMLImageElement.prototype) {
     lazyImages.forEach(img => {
         img.src = img.dataset.src;
     });
-} else {
-    console.log('browser NOT supports lazyload')
-    
+} else {    
+    // динамічно створюємо елемент скрипта в HTML
     const script = document.createElement('script');
     script.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js";
     script.integrity = "sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==";
@@ -628,3 +627,17 @@ if ('loading' in HTMLImageElement.prototype) {
     //   crossorigin="anonymous"
     //   referrerpolicy="no-referrer"
     // ></script>
+
+    // додаємо стилі
+
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    // console.log(lazyImages);
+
+    // вішаємо слухача на кожну картинку (з допомогою {once:true} івент лісенер виконається лише один раз і потім самовидалиться)
+    lazyImages.forEach(image => { image.addEventListener('load', onImageLoaded, {once: true})});
+
+    // коли відбувається lazyload, то вішаємо на картинку клас із анімацією
+    function onImageLoaded(evt) {
+        console.log('image loaded', evt);
+        evt.target.classList.add('appear')
+    };
