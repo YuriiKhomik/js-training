@@ -116,7 +116,7 @@ body.show-modal .modal{
 
 /* STYLES FOR EVENT_DELEGATION */
 
-/* #parent,
+#parent,
 #child,
 #inner-child {
     margin: 16px;
@@ -176,12 +176,12 @@ body.show-modal .modal{
  .tags__btn--active {
     color: #fff;
     background-color: #3f5105;
- } */
+ }
 
 
- /* STYLES FOR COLOR-PICKER
+ /* STYLES FOR COLOR-PICKER */
 
- body{
+ /* body{
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
@@ -218,24 +218,26 @@ body.show-modal .modal{
  } */
 
 
- .feed {
+ /* LAZYLOADING STYLES */
+
+ /* .feed {
     list-style: none;
  }
 
  .feed li:not(:last-child){
     margin-bottom: 32px;
- }
+ } */
 /* по дефолту картинки прозорі */
- .feed img {
+ /* .feed img {
     transform: translateX(-50%);
     opacity: 0;
     transition: all 1000ms linear;
     width: 640px;
     height: 480px;
     object-fit: cover;
- }
+ } */
 /* коли відбувається lazyload, то вішаємо на картинку клас із анімацією */
- .feed img.appear{
+ /* .feed img.appear{
     transform: translateX(0);
     opacity: 1;
- }
+ } */

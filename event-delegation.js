@@ -75,57 +75,57 @@
 
 
 
-// // EXAMPLE FOR EVENT-DELEFATION №2 (CHOOSE ONE BUTTON)
+// EXAMPLE FOR EVENT-DELEFATION №2 (CHOOSE ONE BUTTON)
 
 
-// const tagsContainer = document.querySelector('.js-tags');
-// let selectedTag = null;
+const tagsContainer = document.querySelector('.js-tags');
+let selectedTag = null;
 
-// tagsContainer.addEventListener('click', onTagsContainerClick);
+tagsContainer.addEventListener('click', onTagsContainerClick);
 
-// function onTagsContainerClick(evt) {
+function onTagsContainerClick(evt) {
     
-//     if (evt.target.nodeName !== 'BUTTON') {
-//         return
-//     };
+    if (evt.target.nodeName !== 'BUTTON') {
+        return
+    };
 
-//     // отримуємо доступ до класу з активною кнопкою
-//     const currentActiveBtn = document.querySelector('.tags__btn--active');
-//     // console.log(currentActiveBtn);
+    // отримуємо доступ до класу з активною кнопкою
+    const currentActiveBtn = document.querySelector('.tags__btn--active');
+    // console.log(currentActiveBtn);
 
-//     // знімаємо активний клас з попереднії елементів
+    // знімаємо активний клас з попереднії елементів
     
-//     // if (currentActiveBtn) {
-//     //     currentActiveBtn.classList.remove('tags__btn--active')
-//     // };
+    // if (currentActiveBtn) {
+    //     currentActiveBtn.classList.remove('tags__btn--active')
+    // };
 
-//     //  OR
-//     currentActiveBtn?.classList.remove('tags__btn--active');
+    //  OR
+    currentActiveBtn?.classList.remove('tags__btn--active');
 
-//     // додаємо активний клас на кнопку, по якій відбувається клік
-//     const nextActiveBTN = evt.target;
-//     nextActiveBTN.classList.add('tags__btn--active');
-//     // виводимо в консоль значення із data-value (dataset.value - зберігає значення data-value)
-//     selectedTag = nextActiveBTN.dataset.value;
-//     console.log(selectedTag);
-// };
+    // додаємо активний клас на кнопку, по якій відбувається клік
+    const nextActiveBTN = evt.target;
+    nextActiveBTN.classList.add('tags__btn--active');
+    // виводимо в консоль значення із data-value (dataset.value - зберігає значення data-value)
+    selectedTag = nextActiveBTN.dataset.value;
+    console.log(selectedTag);
+};
 
-// // перевірка вкладеності
-// const settings = {
-//     theme: {
-//         userDefined: {
-//             color: 'hbgv'
-//         }
-//     }
-// };
+// перевірка вкладеності
+const settings = {
+    theme: {
+        userDefined: {
+            color: 'hbgv'
+        }
+    }
+};
 
-// if (settings && settings.theme && settings.theme.userDefined) {
-//     console.log(settings.theme.userDefined.color);
-// };
+if (settings && settings.theme && settings.theme.userDefined) {
+    console.log(settings.theme.userDefined.color);
+};
 
-// // or shorter:
+// or shorter:
 
-// console.log(settings?.theme?.userDefined?.color);
+console.log(settings?.theme?.userDefined?.color);
 
 
 
@@ -223,22 +223,22 @@
 //     //     console.log(evt.target)
 //     // };
 
-//     // or via variable:
-//     const isColorSwatchEl = evt.target.classList.contains('color-swatch');
+    // // or via variable:
+    // const isColorSwatchEl = evt.target.classList.contains('color-swatch');
 
-//     if (!isColorSwatchEl) {
-//         return
-//     } else {
-//         // console.log(evt.target)
-//     };
+    // if (!isColorSwatchEl) {
+    //     return
+    // } else {
+    //     // console.log(evt.target)
+    // };
 
-//     // шукаємо активну картку:
-//     const currentActiveCard = document.querySelector('.color-card.is-active');
+    // // шукаємо активну картку:
+    // const currentActiveCard = document.querySelector('.color-card.is-active');
 
-//     // забираємо активний клас
-//     if (currentActiveCard) {
-//         currentActiveCard.classList.remove('is-active')
-//     };
+    // // забираємо активний клас
+    // if (currentActiveCard) {
+    //     currentActiveCard.classList.remove('is-active')
+    // };
 
 //     const swatchEl = evt.target;
 //     // // parentNode зберігає посилання на батьківський елемент вибраного елемента
@@ -600,26 +600,26 @@
 // };
 
 
-// HOW DO I HANDLE NATIVE LAZYLOADING
+// // HOW DO I HANDLE NATIVE LAZYLOADING
 
-if ('loading' in HTMLImageElement.prototype) {
-    // якщо браузер підтримує, то ми знаходимо всі ліниві картинки 
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+// if ('loading' in HTMLImageElement.prototype) {
+//     // якщо браузер підтримує, то ми знаходимо всі ліниві картинки 
+//     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
     
-    // і додаємо тна кожну картинку атрибут img.src і його значенням буде значення img.dataset.src
-    lazyImages.forEach(img => {
-        img.src = img.dataset.src;
-    });
-} else {    
-    // динамічно створюємо елемент скрипта в HTML
-    const script = document.createElement('script');
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js";
-    script.integrity = "sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==";
-    script.crossOrigin = "anonymous";
-    script.referrerPolicy = "no-referrer";
+//     // і додаємо тна кожну картинку атрибут img.src і його значенням буде значення img.dataset.src
+//     lazyImages.forEach(img => {
+//         img.src = img.dataset.src;
+//     });
+// } else {    
+//     // динамічно створюємо елемент скрипта в HTML
+//     const script = document.createElement('script');
+//     script.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js";
+//     script.integrity = "sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==";
+//     script.crossOrigin = "anonymous";
+//     script.referrerPolicy = "no-referrer";
 
-    document.body.appendChild(script);
-}
+//     document.body.appendChild(script);
+// }
 
     // <script
     //   src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
@@ -628,16 +628,16 @@ if ('loading' in HTMLImageElement.prototype) {
     //   referrerpolicy="no-referrer"
     // ></script>
 
-    // додаємо стилі
+    // // додаємо стилі
 
-    const lazyImages = document.querySelectorAll('img[data-src]');
-    // console.log(lazyImages);
+    // const lazyImages = document.querySelectorAll('img[data-src]');
+    // // console.log(lazyImages);
 
-    // вішаємо слухача на кожну картинку (з допомогою {once:true} івент лісенер виконається лише один раз і потім самовидалиться)
-    lazyImages.forEach(image => { image.addEventListener('load', onImageLoaded, {once: true})});
+    // // вішаємо слухача на кожну картинку (з допомогою {once:true} івент лісенер виконається лише один раз і потім самовидалиться)
+    // lazyImages.forEach(image => { image.addEventListener('load', onImageLoaded, {once: true})});
 
-    // коли відбувається lazyload, то вішаємо на картинку клас із анімацією
-    function onImageLoaded(evt) {
-        console.log('image loaded', evt);
-        evt.target.classList.add('appear')
-    };
+    // // коли відбувається lazyload, то вішаємо на картинку клас із анімацією
+    // function onImageLoaded(evt) {
+    //     console.log('image loaded', evt);
+    //     evt.target.classList.add('appear')
+    // };
